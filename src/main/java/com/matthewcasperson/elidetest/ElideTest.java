@@ -105,7 +105,7 @@ public class ElideTest {
          */
         return elideRunner(
                 request,
-                (elide, path) -> elide.get(path, fromMap(allRequestParams), principal).getBody());
+                (elide, path) -> elide.get(path, fromMap(allRequestParams), principal, SecurityMode.SECURITY_ACTIVE).getBody());
     }
 
     @CrossOrigin(origins = "*")
