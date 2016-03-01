@@ -125,6 +125,6 @@ public class ElideTest {
          */
         return elideRunner(
                 request,
-                (elide, path) -> elide.post(path, body, principal, SecurityMode.SECURITY_INACTIVE).getBody());
+                (elide, path) -> elide.post(path, body, principal, SecurityMode.SECURITY_ACTIVE).getBody());
     }
 }
