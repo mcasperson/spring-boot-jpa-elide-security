@@ -1,9 +1,7 @@
 package com.matthewcasperson.elidetest.jpa;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.yahoo.elide.annotation.CreatePermission;
-import com.yahoo.elide.annotation.ReadPermission;
-import com.yahoo.elide.annotation.SharePermission;
+import com.yahoo.elide.annotation.*;
 import com.yahoo.elide.security.checks.prefab.Role;
 
 import java.io.Serializable;
@@ -15,9 +13,11 @@ import java.util.List;
  * The persistent class for the parent database table.
  * 
  */
-@ReadPermission(any={Role.ALL.class })
-@SharePermission(any={Role.ALL.class })
-@CreatePermission(any={Role.ALL.class })
+@ReadPermission(any={Role.NONE.class })
+@SharePermission(any={Role.NONE.class })
+@CreatePermission(any={Role.NONE.class })
+@UpdatePermission(any={Role.NONE.class })
+@DeletePermission(any={Role.NONE.class })
 @Entity
 @Table(name="parent")
 @NamedQuery(name="Parent.findAll", query="SELECT p FROM Parent p")
